@@ -7,6 +7,10 @@
 *.userosscache
 *.sln.docstates
 
+# Visual Studio cache files
+*.VC.db
+*.VC.opendb
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
