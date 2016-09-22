@@ -15,3 +15,4 @@ Goals:
 
 3. Functional classes by 9/25
 
+https://en.wikipedia.org/wiki/Press_Your_Luck
