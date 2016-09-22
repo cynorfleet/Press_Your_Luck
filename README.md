@@ -1,7 +1,7 @@
 # Press_Your_Luck
 ![Press_Your_Luck](http://www.buzzerblog.com/wp-content/uploads/2014/06/Press_Your_Luck_board.jpg)
 
-CMPS 4143-Program 4
+
 
 Requirements:
 - At least two classes (i.e. Board and Player)
