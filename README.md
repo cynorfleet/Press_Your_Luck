@@ -15,6 +15,5 @@ Goals:
 
 3. Functional classes by 9/25
 
-https://en.wikipedia.org/wiki/Press_Your_Luck
 
 [![Meme_of_The_Day](http://i.imgur.com/4plmxOr.png)](https://www.reddit.com/r/funny/)
