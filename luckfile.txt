@@ -146,5 +146,14 @@ This man is considered to be the father of computing after his invention and con
 Charles Babbage
 What is the third pillar of Object Oriented Programming?
 Polymorphism
-
+Au is the symbol for for what chemical element?
+Gold
+What year was Facebook founded?
+2004
+In computer science, what does "GUI" stand for?
+Graphical user interface
+Pho is a popular noodle soup from what country?
+Vietnam
+What ingredient in bread causes it to rise?
+Yeast
 
