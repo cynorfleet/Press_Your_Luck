@@ -16,4 +16,4 @@ Goals:
 3. Functional classes by 9/25
 
 
-[![Meme_of_The_Day](http://i.imgur.com/L1G3kNV.png)](https://www.reddit.com/r/funny/)
+[![Meme_of_The_Day](http://weknowmemes.com/generator/uploads/generated/g1369409960206058073.jpg)
