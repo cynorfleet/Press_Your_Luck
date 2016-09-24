@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Program_4
 {
-    public partial class Form1 : Form
+    public partial class GameBoard : Form
     {
-        public Form1()
+        public GameBoard()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
