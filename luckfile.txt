@@ -118,9 +118,9 @@ For the Browning HBM2 .50 caliber machine gun to operate properly, the gunner mu
 headspace
 Missouri is separated from Illinois by which river?
 MISSISSIPPI 
-In the TV series ìThe Vampire Diariesî, how did Elenaís parents die?
+In the TV series ‚ÄúThe Vampire Diaries‚Äù, how did Elena‚Äôs parents die?
 CAR CRASH
-On ìFriends,î what was the name of Joeyís girlfriend that Chandler fell in love with?
+On ‚ÄúFriends,‚Äù what was the name of Joey‚Äôs girlfriend that Chandler fell in love with?
 KATHY
 Which team won the 2016 NBA finals?
 CLEVELAND CAVALIERS
@@ -136,6 +136,15 @@ Who won the 400m gold medal in Rio?
 WAYDE VAN NIEKERK
 What is the capital of Sudan?
 KHARTOUM
-
+Rami Malek starred as the leading role in this Emmy Nominated TV series about hacktivists.
+Mr. Robot
+This popular search engine company has recently disclosed that 500 million of its user accounts were compromised.
+Yahoo
+This mid-1990's company provided a dial-up service to millions of Americans, as well as providing a web portal, e-mail, instant messaging and later a web browser following its purchase of Netscape.
+AOL
+This man is considered to be the father of computing after his invention and concept of the Analytical Engine in 1837.
+Charles Babbage
+What is the third pillar of Object Oriented Programming?
+Polymorphism
 
 
