@@ -11,7 +11,7 @@ Goals:
 
 1. Find assets (i.e. pictures, sounds, etc)
 
-2. ~~Have a working GUI skeleton by 9/23 
+2. ~~Have a working GUI skeleton by 9/23~~
 
 3. Functional classes by 9/25
 
