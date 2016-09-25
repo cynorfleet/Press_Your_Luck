@@ -17,10 +17,10 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
 
     class Player
     {
-        double score;
+        int score;
         int whammy;
 
-    public Player()
+        public Player()
         /*-------------------------------------------- Player ---------------------------
         |  Function:    default constructor
         |
@@ -31,7 +31,7 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
         |  Returns:  	N/A
         *--------------------------------------------------------------------------------*/
         {
-            score = 0.00;
+            score = 0;
             whammy = 0;
         }
         
@@ -47,10 +47,10 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
         |  Returns:  	The Player's score in dollar format.
         *-----------------------------------------------------------------------------------*/
         {
-            return ("$" + score);
+            return ("$" + score + ".00");
         }
 
-     public void setScore(double ?scaler)
+     public void setScore(int ?scaler)
         /*-------------------------------------------- setScore ------------------------------
         |  Function:    setScore
         |
@@ -110,6 +110,20 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
              *    It returns the left-hand operand if the operand is not null;                *
              *    otherwise it returns the right hand operand.                                *
              **********************************************************************************/
+        }
+
+        public override string ToString()
+        /*-------------------------------------------- ToString ------------------------------
+        |  Function:    ToString
+        |
+        |  Purpose:     Overrides the base class's ToString method for appropriate formatting
+        |
+        |  Parameters:  N/A
+        |
+        |  Returns:  	The player's score and whammies
+        *------------------------------------------------------------------------------------*/     
+        {
+            return ("score: " + score + "\nwhammy" + whammy);
         }
 
         ~Player()

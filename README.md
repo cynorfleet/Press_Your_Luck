@@ -3,17 +3,17 @@
 
 
 
-Requirements:
+# Requirements:
 - At least two classes (i.e. Board and Player)
 - Randomization
 
-Goals:
-
+# Goals:
 1. Find assets (i.e. pictures, sounds, etc)
-
 2. ~~Have a working GUI skeleton by 9/23~~
-
 3. Functional classes by 9/25
 
+# Ideas:
+- Create 2 `Player` objects and put them in `Players` array/list have the Game class switch players by referring to indices
+- add a `string name` to the `Player` class and allow players to enter their names
 
 [![Meme_of_The_Day](http://weknowmemes.com/generator/uploads/generated/g1369409960206058073.jpg)
