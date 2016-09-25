@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Playernsp;
 
 namespace Program_4
 {
@@ -15,6 +16,13 @@ namespace Program_4
         public GameBoard()
         {
             InitializeComponent();
+
+            List <Player> Players = new List<Player>(2);
+            //  Create an array to hold Player objects
+            //  This allows seamless switching of turns
+            Players.Add(new Player());
+            Players.Add(new Player());
+
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
