@@ -13,11 +13,10 @@ namespace Program_4
 {
     public partial class GameBoard : Form
     {
+        List<Player> Players = new List<Player>(2);
         public GameBoard()
         {
             InitializeComponent();
-
-            List <Player> Players = new List<Player>(2);
             //  Create an array to hold Player objects
             //  This allows seamless switching of turns
             Players.Add(new Player());
@@ -32,6 +31,16 @@ namespace Program_4
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /************************************************************************
+            *                  //   this code works                                 *
+            *                  Players[0].setScore(3);                              *
+            *                  textBox2.Text = Players[0].getScore();               *
+            *************************************************************************/
 
         }
     }

@@ -241,8 +241,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 74);
             this.button1.TabIndex = 19;
-            this.button1.Text = "START (button1)";
+            this.button1.Text = "START";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -253,7 +254,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 74);
             this.button2.TabIndex = 20;
-            this.button2.Text = "STOP(button2)";
+            this.button2.Text = "STOP";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // contextMenuStrip1
@@ -276,9 +277,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 424);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 31);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Question(label1)";
+            this.label1.Text = "Question";
             // 
             // label2
             // 
@@ -286,9 +287,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 478);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(209, 31);
+            this.label2.Size = new System.Drawing.Size(111, 31);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Answer(label2)";
+            this.label2.Text = "Answer";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
