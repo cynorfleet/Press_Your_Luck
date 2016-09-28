@@ -43,5 +43,18 @@ namespace Program_4
             *************************************************************************/
 
         }
+
+        private void GameBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //Method containing help button functionality
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            HelpWindow help = new HelpWindow();
+            help.ShowDialog();
+        }
     }
 }
