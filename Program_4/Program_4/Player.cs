@@ -17,8 +17,33 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
 
     class Player
     {
-        int score;
-        int whammy;
+        public int score { get; set ; }
+        /*-------------------------------------------- score -------------------------------
+       |  Property:    score
+       |
+       |  Purpose:     This function will provide/scale the money available to the
+       |               current Player.
+       |  Extension:
+       |    (set) --   This allows assignment of the score variable 
+       |
+       |    (get) --   This provides the score
+       |
+       |  Returns:  	The Player's score in dollar format as a string type.
+       *-----------------------------------------------------------------------------------*/
+
+        public int whammy { get; set; }
+        /*-------------------------------------------- score -------------------------------
+        |  Property:    whammy
+        |
+        |  Purpose:     This function will provide/scale the amount of whammies accumulated 
+        |               by the current Player.
+        |  Extension:
+        |    (set) --   This allows assignment of the whammy variable 
+        |
+        |    (get) --   This provides the whammies
+        |
+        |  Returns:  	The Player's whammies in as a int type.
+        *-----------------------------------------------------------------------------------*/
 
         public Player()
         /*-------------------------------------------- Player ---------------------------
@@ -34,83 +59,6 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
             score = 0;
             whammy = 0;
         }
-        
-     public string getScore()
-        /*-------------------------------------------- getScore -----------------------------
-        |  Function:    getScore
-        |
-        |  Purpose:     This function will provide the money available to the
-        |               current Player.
-        |
-        |  Parameters:  N/A
-        |
-        |  Returns:  	The Player's score in dollar format.
-        *-----------------------------------------------------------------------------------*/
-        {
-            return ("$" + score + ".00");
-        }
-
-     public void setScore(int ?scaler)
-        /*-------------------------------------------- setScore ------------------------------
-        |  Function:    setScore
-        |
-        |  Purpose:     This function will increment/decrement the players score
-        |               depending if the argument being passed is +/-.
-        |
-        |  Parameters:
-        |	 (IN) --    a double variable "scaler?". This is just a value used to increment
-        |               the player's score. The '?' on the variable makes it a null-able value 
-        |               (which means that you can assign null to it).
-        |
-        |  Returns:  	N/A
-        *------------------------------------------------------------------------------------*/
-        {
-            score += scaler ?? 0;
-           /**********************************************************************************   
-            *    The ?? operator is called the null-coalescing operator.                     *
-            *    It returns the left-hand operand if the operand is not null;                *
-            *    otherwise it returns the right hand operand.                                *
-            **********************************************************************************/
-        }
-
-
-        public int getWhammy()
-        /*-------------------------------------------- getWhammy -------------------------------
-        |  Function:    getWhammy
-        |
-        |  Purpose:     This function will provide the amount of whammies accumulated by the
-        |               current Player.
-        |
-        |  Parameters:  N/A
-        |
-        |  Returns:  	The Player's whammies
-        *-------------------------------------------------------------------------------------*/
-        { 
-            return (whammy);
-        }
-
-        public void setWhammy(int? scaler)
-        /*-------------------------------------------- setWhammy -------------------------------
-        |  Function:    setWhammy
-        |
-        |  Purpose:     This function will increment/decrement the players whammies
-        |               depending if the argument being passed is +/-.
-        |
-        |  Parameters:
-        |	 (IN) --    a double variable "scaler?". This is just a value used to increment
-        |               the player's score. The '?' on the variable makes it a null-able value 
-        |                (which means that you can assign null to it).
-        |
-        |  Returns:  	N/A
-        *-------------------------------------------------------------------------------------*/
-        {
-            whammy += scaler ?? 0;
-            /**********************************************************************************   
-             *    The ?? operator is called the null-coalescing operator.                     *
-             *    It returns the left-hand operand if the operand is not null;                *
-             *    otherwise it returns the right hand operand.                                *
-             **********************************************************************************/
-        }
 
         public override string ToString()
         /*-------------------------------------------- ToString ------------------------------
@@ -123,7 +71,7 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
         |  Returns:  	The player's score and whammies
         *------------------------------------------------------------------------------------*/     
         {
-            return ("score: " + score + "\nwhammy" + whammy);
+            return ("score: $" + score + ".00\nwhammy" + whammy);
         }
 
         ~Player()
