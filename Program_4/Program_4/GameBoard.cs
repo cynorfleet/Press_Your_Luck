@@ -36,11 +36,11 @@ namespace Program_4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /************************************************************************
-            *                  //   this code works                                 *
-            *                  Players[0].setScore(3);                              *
-            *                  textBox2.Text = Players[0].getScore();               *
-            *************************************************************************/
+           // ************************************************************************
+           //                 //   this code works                                 *
+           //                 Players[0].setScore(3);                               
+           //                label5.Text = Players[0].getScore();                 
+           // *************************************************************************/
 
         }
 
@@ -55,6 +55,11 @@ namespace Program_4
         {
             HelpWindow help = new HelpWindow();
             help.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
