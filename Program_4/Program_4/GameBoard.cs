@@ -38,7 +38,7 @@ namespace Program_4
         {
             /****************************** DEBUG **********************************/                               
             listPlayer[player1].setScore(3);     //      OR listPlayer[0].setScore(3);
-            textBox2.Text = listPlayer[0].getScore();
+            scoreP1.Text = listPlayer[0].getScore();
             /***********************************************************************/
 
         }
