@@ -12,27 +12,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Playernsp       /* Defines a custom namespace for the Player class */
+namespace Player /* Defines a custom namespace for the Player class */
 {
 
-    class Player
+    enum setPlayer { player1, player2, player3 };
+
+    class NewPlayer
     {
         int score;
         int whammy;
 
-        public Player()
-        /*-------------------------------------------- Player ---------------------------
-        |  Function:    default constructor
+        public NewPlayer(int default_score = 0, int default_whammy = 0)
+        /*-------------------------------------------- Player --------------------------------
+        |  Function:    constructor
         |
-        |  Purpose:     The default constructor simply initializes member data.
+        |  Purpose:     The constructor simply initializes member data using optional parameters.
         |
-        |  Parameters:  N/A
+        |  Parameters:
+        |   (IN/opt) -- An optional integer "default_score". If no argument is sent the value
+        |               zero will be used by default.
+        |
+        |   (IN/opt) -- An optional integer "default_whammy". If no argument is sent the value
+        |               zero will be used by default.
+        |
+        |            -- If neither argument is sent, this will be treated as Default Constructor
         |
         |  Returns:  	N/A
-        *--------------------------------------------------------------------------------*/
+        *-----------------------------------------------------------------------------------*/
         {
-            score = 0;
-            whammy = 0;
+            score = default_score;
+            whammy = default_whammy;
         }
         
      public string getScore()
@@ -126,7 +135,7 @@ namespace Playernsp       /* Defines a custom namespace for the Player class */
             return ("score: " + score + "\nwhammy" + whammy);
         }
 
-        ~Player()
+        ~NewPlayer()
         /*-------------------------------------------- ~Player -------------------------------
         |  Function:    Destructor
         |
