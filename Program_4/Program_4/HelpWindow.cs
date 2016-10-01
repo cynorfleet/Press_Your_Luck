@@ -12,6 +12,8 @@ namespace Program_4
 {
     public partial class HelpWindow : Form
     {
+        Dictionary<string, string> helpcontext;
+
         public HelpWindow()
         {
             InitializeComponent();

@@ -67,8 +67,9 @@ namespace Program_4
         //Method containing help button functionality
         private void helpButton_Click(object sender, EventArgs e)
         {
-            HelpWindow help = new HelpWindow();
-            help.ShowDialog();
+            MessageBox.Show("PRESS YOUR LUCK\n \nHow to Play Press Your Luck\n\nPLAYER ANSWERS THE TRIVIA QUESTION" +
+                            "S TO EARN SPINS.\n\nTHE SPINS WILL BE USED ON THE GAME BOARD FOR A CHANCE TO WIN M" +
+                            "ONEY OR GET MORE SPINS.");
         }
 
         private void label5_Click(object sender, EventArgs e)

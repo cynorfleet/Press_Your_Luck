@@ -39,8 +39,9 @@
             this.richTextBox1.Size = new System.Drawing.Size(345, 267);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "PRESS YOUR LUCK\n \nHow to Play Press Your Luck\n\nPLAYER ANSWERS THE TRIVIA QUESTION" +
-    "S TO EARN SPINS.\n\nTHE SPINS WILL BE USED ON THE GAME BOARD FOR A CHANCE TO WIN M" +
-    "ONEY OR GET MORE SPINS.";
+                                     "S TO EARN SPINS.\n\nTHE SPINS WILL BE USED ON THE GAME BOARD FOR A CHANCE TO WIN M" +
+                                     "ONEY OR GET MORE SPINS.";
+
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // HelpWindow
