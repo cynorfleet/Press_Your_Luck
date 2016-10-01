@@ -214,7 +214,7 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(1400, 198);
+            this.pictureBox16.Location = new System.Drawing.Point(1400, 611);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(264, 184);
@@ -223,7 +223,7 @@
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Location = new System.Drawing.Point(1400, 396);
+            this.pictureBox17.Location = new System.Drawing.Point(1400, 413);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(264, 184);
@@ -232,7 +232,7 @@
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Location = new System.Drawing.Point(1400, 594);
+            this.pictureBox18.Location = new System.Drawing.Point(1400, 198);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(264, 184);
