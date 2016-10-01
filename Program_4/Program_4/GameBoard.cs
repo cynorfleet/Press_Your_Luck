@@ -50,7 +50,30 @@ namespace Program_4
 
         private void label2_Click(object sender, EventArgs e)
         {
+           // ************************************************************************
+           //                 //   this code works                                 *
+           //                 Players[0].setScore(3);                               
+           //                label5.Text = Players[0].getScore();                 
+           // *************************************************************************/
 
+        }
+
+        private void GameBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //Method containing help button functionality
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            HelpWindow help = new HelpWindow();
+            help.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
