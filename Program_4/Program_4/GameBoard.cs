@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Player;
+using Chris;
 
 namespace Program_4
 {
@@ -15,17 +15,19 @@ namespace Program_4
     public partial class GameBoard : Form
     {
         const int NUM_PLAYERS = 3;
+        int score_scaler = 3;
 
         int player1 = (int)setPlayer.player1;
         int player2 = (int)setPlayer.player2;
+        int player3 = (int)setPlayer.player3;
 
-        List<NewPlayer> listPlayer = new List<NewPlayer>(2);
+        List<Player>Players = new List<Player>(2);
         public GameBoard()
         {
             InitializeComponent();
 
             for(int i = 0; i < NUM_PLAYERS; i++)
-            listPlayer.Add( new NewPlayer() );
+                Players.Add( new Player() );
             /************************************************************************
              *   Creates an array to hold Player objects.
              *   This allows seamless switching of turns.
@@ -36,9 +38,9 @@ namespace Program_4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /****************************** DEBUG **********************************/                               
-            listPlayer[player1].setScore(3);     //      OR listPlayer[0].setScore(3);
-            scoreP1.Text = listPlayer[0].getScore();
+            /****************************** DEBUG **********************************/
+            Players[player1].score += score_scaler;     //      OR listPlayer[0].setScore(3);
+            scoreP1.Text = "" + Players[0].score;
             /***********************************************************************/
 
         }
@@ -75,6 +77,12 @@ namespace Program_4
         private void label5_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void SpinButton_Click(object sender, EventArgs e)
+        {
+            ReadImages.SnatchImages();
+
         }
     }
 }
