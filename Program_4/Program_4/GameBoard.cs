@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 using Chris;
 
@@ -16,12 +17,13 @@ namespace Program_4
     {
         const int NUM_PLAYERS = 3;
         int score_scaler = 3;
-
         int player1 = (int)setPlayer.player1;
         int player2 = (int)setPlayer.player2;
         int player3 = (int)setPlayer.player3;
 
         List<Player>Players = new List<Player>(2);
+        List<PictureBox> Tilelist;
+
         public GameBoard()
         {
             InitializeComponent();
@@ -36,27 +38,35 @@ namespace Program_4
              ************************************************************************/
         }
 
+        public void storeTiles()
+        {
+            
+        }
+
+        public void randpic()
+        {
+            Random rand = new Random();
+            Image picbuffer;
+
+            for (int i = 1; i < 19; i++)
+            {
+                picbuffer = ReadImages.fileimgs[rand.Next(0, ReadImages.fileimgs.Count)];
+                ((PictureBox)this.Controls["pictureBox" + i.ToString()]).Image = picbuffer;
+            }
+
+            Random randhighlight = new Random();
+            ((PictureBox)this.Controls["pictureBox" + randhighlight.Next(1,17).ToString()]).BackColor = System.Drawing.Color.LightGoldenrodYellow;
+
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             /****************************** DEBUG **********************************/
             Players[player1].score += score_scaler;     //      OR listPlayer[0].setScore(3);
             scoreP1.Text = "" + Players[0].score;
             /***********************************************************************/
-
-        }
-
-        private void pictureBox19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-           // ************************************************************************
-           //                 //   this code works                                 *
-           //                 Players[0].setScore(3);                               
-           //                label5.Text = Players[0].getScore();                 
-           // *************************************************************************/
 
         }
 
@@ -74,15 +84,12 @@ namespace Program_4
                             "ONEY OR GET MORE SPINS.");
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void SpinButton_Click(object sender, EventArgs e)
         {
             ReadImages.SnatchImages();
-
+            
+            randpic();
         }
     }
 }

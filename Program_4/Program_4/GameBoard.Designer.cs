@@ -284,7 +284,6 @@
             this.label2.Size = new System.Drawing.Size(111, 31);
             this.label2.TabIndex = 25;
             this.label2.Text = "Answer";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -345,7 +344,6 @@
             this.scoreP1.Size = new System.Drawing.Size(46, 13);
             this.scoreP1.TabIndex = 1;
             this.scoreP1.Text = "scoreP1";
-            this.scoreP1.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -419,7 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 536);
+            this.ClientSize = new System.Drawing.Size(787, 518);
             this.Controls.Add(this.SpinButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

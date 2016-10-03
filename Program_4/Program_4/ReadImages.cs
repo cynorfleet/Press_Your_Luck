@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ namespace Chris
     {
        static public List<Image> fileimgs = new List<Image>();
         // contains a List of images captured from the clients computer
+
+
 
         static String[] GetFilesFrom(String searchFolder, String[] filters, bool isRecursive)
         /*-------------------------------------------- GetFilesFrom -----
@@ -51,8 +55,6 @@ namespace Chris
             string path = Directory.GetCurrentDirectory();
 
             path = __FindDirRecur(path);
-
-            MessageBox.Show(path);
             return path;
         }
 
@@ -66,14 +68,14 @@ namespace Chris
             }
 
                 currentpath = "" + Directory.GetParent(currentpath);
-                MessageBox.Show("NOT: \n" + currentpath);
+                MessageBox.Show("Looking... \n\n" + currentpath);
 
                 foreach (var folder in dirbuffer)
                 {
                     if (folder.Contains("Images"))
                     {
                         currentpath = folder;
-                        MessageBox.Show("Found: \n" + currentpath);
+                        MessageBox.Show("FOUND IT: \n\n" + currentpath);
                         return currentpath;
                     }
                 }
@@ -93,21 +95,41 @@ namespace Chris
             var filters = fltr ?? (new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" });
             // if the filter array was not passed in make it equal to the above by default
 
-            MessageBox.Show("SnatchImages: \n" + searchFolder);
-            // DEBUG
-
             var filepaths = GetFilesFrom(searchFolder, filters, isRecursive);
             // store the array of returned image-paths to filepaths
 
-            var count = 0;
             foreach (var pic in filepaths)
             //  use each path to create an Image and store it in fileimgs List
             {
-                count++;
-                fileimgs.Add(Image.FromFile(filepaths[count - 1]));
+                fileimgs.Add(ResizeImage(Image.FromFile(pic), 99, 77));
+                
             }
         }
 
+        public static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
 
     }
 }
