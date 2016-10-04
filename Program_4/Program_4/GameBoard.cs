@@ -21,8 +21,11 @@ namespace Program_4
         int player2 = (int)setPlayer.player2;
         int player3 = (int)setPlayer.player3;
 
+        static public List<Image> fileimgs = new List<Image>();
+        // contains a List of images captured from the clients computer
+
         List<Player>Players = new List<Player>(2);
-        List<PictureBox> Tilelist;
+        List<Tile> Tilelist = new List<Tile>();
 
         public GameBoard()
         {
@@ -35,31 +38,66 @@ namespace Program_4
              *   This allows seamless switching of turns.
              *   Players may be indexed by either name 
              *   or index (i.e. "player1" or '0').  
-             ************************************************************************/
+             ************************************************************************/;
+            
+            storeTiles();
+            randTile();
         }
 
         public void storeTiles()
         {
-            
+            foreach (var picpath in ReadImages.SnatchImages())
+            //  crawl directory to snatch array of image paths
+            //  use each path to create an Image and store it in Tilelist
+            {
+                Tilelist.Add(new Tile(picpath));
+            }
         }
 
-        public void randpic()
+        public void randTile()
         {
             Random rand = new Random();
-            Image picbuffer;
-
-            for (int i = 1; i < 19; i++)
-            {
-                picbuffer = ReadImages.fileimgs[rand.Next(0, ReadImages.fileimgs.Count)];
-                ((PictureBox)this.Controls["pictureBox" + i.ToString()]).Image = picbuffer;
-            }
-
             Random randhighlight = new Random();
-            ((PictureBox)this.Controls["pictureBox" + randhighlight.Next(1,17).ToString()]).BackColor = System.Drawing.Color.LightGoldenrodYellow;
 
+            foreach(PictureBox tile in this.TileBox.Controls)
+            {
+                var randomTile = Tilelist[rand.Next(0, Tilelist.Count)];
+                tile.Image = randomTile.pic;
+
+                try
+                {
+                    if (randomTile.whammy)
+                        tile.Tag = "whammy";
+                    else
+                        tile.Tag = randomTile.value;
+                }
+                catch
+                {
+                        MessageBox.Show("UH OHHHHHHHHH\nCould NOT load Tile from:\n\n" + randomTile.fullpath);
+                        // In case of invalid file throw exception
+                }
+                finally
+                {
+                //    MessageBox.Show("Tile Value: " + tile.Tag);
+                }
+            }
         }
 
+        public void SelectTile()
+        {
+            Random randhighlight = new Random();
+            var randTile = this.TileBox.Controls;
+            var pickedtile = randTile[randhighlight.Next(0, this.TileBox.Controls.Count)];
+                pickedtile.BackColor = System.Drawing.Color.DarkSlateBlue;
+           //MessageBox.Show("Selected: " + pickedtile.Name);
+        }
 
+        public void ClearTile()
+        {
+            foreach (PictureBox tile in this.TileBox.Controls)
+                tile.BackColor = System.Drawing.Color.Empty;
+           // MessageBox.Show("All Tiles Cleared");
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -85,11 +123,17 @@ namespace Program_4
         }
 
 
-        private void SpinButton_Click(object sender, EventArgs e)
+        private void SpinButton_Click_1(object sender, EventArgs e)
         {
-            ReadImages.SnatchImages();
-            
-            randpic();
+            timer1.Interval = 250;
+            timer1.Enabled = !timer1.Enabled;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ClearTile();
+            randTile();
+            SelectTile();
         }
     }
 }

@@ -13,10 +13,7 @@ namespace Chris
 {
     class ReadImages
     {
-       static public List<Image> fileimgs = new List<Image>();
-        // contains a List of images captured from the clients computer
-
-
+        static public String ImageDirectory { get; set; }
 
         static String[] GetFilesFrom(String searchFolder, String[] filters, bool isRecursive)
         /*-------------------------------------------- GetFilesFrom -----
@@ -54,8 +51,8 @@ namespace Chris
         {
             string path = Directory.GetCurrentDirectory();
 
-            path = __FindDirRecur(path);
-            return path;
+            ImageDirectory = __FindDirRecur(path);
+            return ImageDirectory;
         }
 
         static String __FindDirRecur(string currentpath)
@@ -84,13 +81,14 @@ namespace Chris
                return currentpath;
         }
 
-        public static void SnatchImages(String folderpath = null, String[] fltr = null, bool isRecursive = false)
+        public static String[] SnatchImages(String folderpath = null, String[] fltr = null, bool isRecursive = false)
         {
             folderpath = folderpath ?? FindDir();
             // if the folderpath was not passed in make it equal to the current directory by default
 
-            String searchFolder = @"" + folderpath;
+            String searchFolder = @"" + folderpath ?? @"" + FindDir();
             // set the target searchFolder
+
 
             var filters = fltr ?? (new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" });
             // if the filter array was not passed in make it equal to the above by default
@@ -98,12 +96,7 @@ namespace Chris
             var filepaths = GetFilesFrom(searchFolder, filters, isRecursive);
             // store the array of returned image-paths to filepaths
 
-            foreach (var pic in filepaths)
-            //  use each path to create an Image and store it in fileimgs List
-            {
-                fileimgs.Add(ResizeImage(Image.FromFile(pic), 99, 77));
-                
-            }
+            return filepaths;
         }
 
         public static Bitmap ResizeImage(Image image, int width, int height)
