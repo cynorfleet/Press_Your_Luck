@@ -83,13 +83,15 @@ namespace Program_4
             }
         }
 
-        public void SelectTile()
+        public Control SelectTile()
         {
             Random randhighlight = new Random();
             var randTile = this.TileBox.Controls;
             var pickedtile = randTile[randhighlight.Next(0, this.TileBox.Controls.Count)];
-                pickedtile.BackColor = System.Drawing.Color.DarkSlateBlue;
-           //MessageBox.Show("Selected: " + pickedtile.Name);
+            pickedtile.BackColor = System.Drawing.Color.LimeGreen;
+            //MessageBox.Show("Selected: " + pickedtile.Name);
+
+            return pickedtile;
         }
 
         public void ClearTile()
@@ -107,12 +109,6 @@ namespace Program_4
             /***********************************************************************/
 
         }
-
-        private void GameBoard_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         //Method containing help button functionality
         private void helpButton_Click(object sender, EventArgs e)
