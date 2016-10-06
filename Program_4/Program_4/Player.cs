@@ -18,6 +18,7 @@ namespace Chris       /* Defines a custom namespace for the Player class */
     enum setPlayer { player1, player2, player3 };
     class Player
     {
+
         public int score { get; set ; }
         /*-------------------------------------------- score -------------------------------
        |  Property:    score
@@ -59,6 +60,7 @@ namespace Chris       /* Defines a custom namespace for the Player class */
         {
             score = 0;
             whammy = 0;
+           
         }
 
         public override string ToString()
