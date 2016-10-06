@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace Chris
 {
-    class Tile
+    class Tile : ReadImages
     {
         public Image pic { get; set; }
-        public decimal value { get; set; }
+        public string value { get; set; }
         public bool whammy { get; set; }
         public String fullpath { get; set; }
 
@@ -20,7 +20,7 @@ namespace Chris
             whammy = false;
             // default the whammy to false until whammy is found
 
-            pic = ReadImages.ResizeImage(Image.FromFile(path), 77, 60);
+            pic = ResizeImage(Image.FromFile(path), 77, 60);
             // Resize the pic in high def and store it in Tile
 
             fullpath = path;
@@ -33,7 +33,7 @@ namespace Chris
 
             else
             {
-                var substringindex = ReadImages.ImageDirectory.Length;
+                var substringindex = ImageDirectory.Length;
                 // Find the index of the where the value begins in the path
 
                 var pathbuffer = path.Substring(substringindex + 1, 4);
@@ -43,7 +43,7 @@ namespace Chris
 
                 try
                 {
-                    value = System.Convert.ToDecimal(pathbuffer);
+                    value = pathbuffer;
                     //  Try to store the value as an int
                 }
                 catch (Exception e)

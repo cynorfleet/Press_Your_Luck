@@ -30,21 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBoard));
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.answerBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.player1spins = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.p1spins = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.scoreP1 = new System.Windows.Forms.Label();
+            this.p1score = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.player2spins = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.p2spins = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.p2score = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -71,7 +72,8 @@
             this.qtextbox = new System.Windows.Forms.RichTextBox();
             this.submitbutton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
-            this.cwlabel = new System.Windows.Forms.Label();
+            this.isitcorrect = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,30 +97,18 @@
             this.TileBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(648, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 74);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "START";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(648, 83);
+            this.button2.Location = new System.Drawing.Point(641, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 74);
             this.button2.TabIndex = 20;
-            this.button2.Text = "STOP";
+            this.button2.Text = "EXIT";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // answerBox
             // 
@@ -152,7 +142,7 @@
             // helpButton
             // 
             this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpButton.Location = new System.Drawing.Point(648, 163);
+            this.helpButton.Location = new System.Drawing.Point(641, 83);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(134, 80);
             this.helpButton.TabIndex = 27;
@@ -162,25 +152,42 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.player1spins);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.p1spins);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.scoreP1);
+            this.groupBox1.Controls.Add(this.p1score);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(634, 298);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(148, 100);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player1";
+            this.groupBox1.UseWaitCursor = true;
             // 
-            // player1spins
+            // radioButton1
             // 
-            this.player1spins.AutoSize = true;
-            this.player1spins.Location = new System.Drawing.Point(66, 69);
-            this.player1spins.Name = "player1spins";
-            this.player1spins.Size = new System.Drawing.Size(0, 13);
-            this.player1spins.TabIndex = 3;
-            this.player1spins.Click += new System.EventHandler(this.label7_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.Location = new System.Drawing.Point(85, 0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.TabIndex = 18;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // p1spins
+            // 
+            this.p1spins.AutoSize = true;
+            this.p1spins.Location = new System.Drawing.Point(56, 69);
+            this.p1spins.Name = "p1spins";
+            this.p1spins.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p1spins.Size = new System.Drawing.Size(0, 13);
+            this.p1spins.TabIndex = 3;
+            this.p1spins.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -190,15 +197,17 @@
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Spin";
+            this.label6.UseWaitCursor = true;
             // 
-            // scoreP1
+            // p1score
             // 
-            this.scoreP1.AutoSize = true;
-            this.scoreP1.Location = new System.Drawing.Point(56, 34);
-            this.scoreP1.Name = "scoreP1";
-            this.scoreP1.Size = new System.Drawing.Size(46, 13);
-            this.scoreP1.TabIndex = 1;
-            this.scoreP1.Text = "scoreP1";
+            this.p1score.AutoSize = true;
+            this.p1score.Location = new System.Drawing.Point(56, 34);
+            this.p1score.Name = "p1score";
+            this.p1score.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p1score.Size = new System.Drawing.Size(0, 13);
+            this.p1score.TabIndex = 1;
+            this.p1score.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -208,27 +217,41 @@
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Score";
+            this.label4.UseWaitCursor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.player2spins);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.p2spins);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.p2score);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(634, 413);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox2.Size = new System.Drawing.Size(148, 100);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player2";
             // 
-            // player2spins
+            // radioButton2
             // 
-            this.player2spins.AutoSize = true;
-            this.player2spins.Location = new System.Drawing.Point(57, 65);
-            this.player2spins.Name = "player2spins";
-            this.player2spins.Size = new System.Drawing.Size(0, 13);
-            this.player2spins.TabIndex = 3;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.Location = new System.Drawing.Point(85, 0);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.TabIndex = 4;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // p2spins
+            // 
+            this.p2spins.AutoSize = true;
+            this.p2spins.Location = new System.Drawing.Point(56, 66);
+            this.p2spins.Name = "p2spins";
+            this.p2spins.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p2spins.Size = new System.Drawing.Size(0, 13);
+            this.p2spins.TabIndex = 3;
             // 
             // label10
             // 
@@ -239,14 +262,14 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Spin";
             // 
-            // label9
+            // p2score
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(69, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "label9(scoreP2)";
+            this.p2score.AutoSize = true;
+            this.p2score.Location = new System.Drawing.Point(56, 37);
+            this.p2score.Name = "p2score";
+            this.p2score.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p2score.Size = new System.Drawing.Size(0, 13);
+            this.p2score.TabIndex = 1;
             // 
             // label8
             // 
@@ -462,11 +485,11 @@
             // 
             // getSpinbutton
             // 
-            this.getSpinbutton.Location = new System.Drawing.Point(651, 252);
+            this.getSpinbutton.Location = new System.Drawing.Point(641, 252);
             this.getSpinbutton.Name = "getSpinbutton";
-            this.getSpinbutton.Size = new System.Drawing.Size(75, 23);
+            this.getSpinbutton.Size = new System.Drawing.Size(134, 40);
             this.getSpinbutton.TabIndex = 34;
-            this.getSpinbutton.Text = "Get Spins";
+            this.getSpinbutton.Text = "Use Spin";
             this.getSpinbutton.UseVisualStyleBackColor = true;
             this.getSpinbutton.Click += new System.EventHandler(this.getSpinbutton_Click);
             // 
@@ -499,21 +522,24 @@
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
-            // cwlabel
+            // isitcorrect
             // 
-            this.cwlabel.AutoSize = true;
-            this.cwlabel.Location = new System.Drawing.Point(472, 428);
-            this.cwlabel.Name = "cwlabel";
-            this.cwlabel.Size = new System.Drawing.Size(35, 13);
-            this.cwlabel.TabIndex = 38;
-            this.cwlabel.Text = "label3";
+            this.isitcorrect.AutoSize = true;
+            this.isitcorrect.Location = new System.Drawing.Point(472, 428);
+            this.isitcorrect.Name = "isitcorrect";
+            this.isitcorrect.Size = new System.Drawing.Size(0, 13);
+            this.isitcorrect.TabIndex = 38;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 518);
-            this.Controls.Add(this.cwlabel);
+            this.Controls.Add(this.isitcorrect);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.submitbutton);
             this.Controls.Add(this.qtextbox);
@@ -526,7 +552,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.answerBox);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.TileBox);
             this.Name = "GameBoard";
             this.Text = "GameBoard";
@@ -560,21 +585,20 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox answerBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label player1spins;
+        private System.Windows.Forms.Label p1spins;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label scoreP1;
+        private System.Windows.Forms.Label p1score;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label player2spins;
+        private System.Windows.Forms.Label p2spins;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label p2score;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -601,7 +625,10 @@
         private System.Windows.Forms.RichTextBox qtextbox;
         private System.Windows.Forms.Button submitbutton;
         private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.Label cwlabel;
+        private System.Windows.Forms.Label isitcorrect;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 

@@ -65,14 +65,14 @@ namespace Chris
             }
 
                 currentpath = "" + Directory.GetParent(currentpath);
-                MessageBox.Show("Looking... \n\n" + currentpath);
+                Console.WriteLine("Looking... \n\n" + currentpath);
 
                 foreach (var folder in dirbuffer)
                 {
                     if (folder.Contains("Images"))
                     {
                         currentpath = folder;
-                        MessageBox.Show("FOUND IT: \n\n" + currentpath);
+                    Console.WriteLine("FOUND IT: \n\n" + currentpath);
                         return currentpath;
                     }
                 }

@@ -33,18 +33,18 @@ namespace Chris       /* Defines a custom namespace for the Player class */
        |  Returns:  	The Player's score in dollar format as a string type.
        *-----------------------------------------------------------------------------------*/
 
-        public int whammy { get; set; }
-        /*-------------------------------------------- score -------------------------------
-        |  Property:    whammy
+        public int spins { get; set; }
+        /*-------------------------------------------- spins -------------------------------
+        |  Property:    spins
         |
-        |  Purpose:     This function will provide/scale the amount of whammies accumulated
+        |  Purpose:     This function will provide/scale the amount of spins accumulated
         |               by the current Player.
         |  Extension:
-        |    (set) --   This allows assignment of the whammy variable
+        |    (set) --   This allows assignment of the spins variable
         |
-        |    (get) --   This provides the whammies
+        |    (get) --   This provides the spins
         |
-        |  Returns:  	The Player's whammies in as a int type.
+        |  Returns:  	The Player's spins in as a int type.
         *-----------------------------------------------------------------------------------*/
 
         public Player()
@@ -59,7 +59,7 @@ namespace Chris       /* Defines a custom namespace for the Player class */
         *--------------------------------------------------------------------------------*/
         {
             score = 0;
-            whammy = 0;
+            spins = 0;
            
         }
 
@@ -74,7 +74,7 @@ namespace Chris       /* Defines a custom namespace for the Player class */
         |  Returns:  	The player's score and whammies
         *------------------------------------------------------------------------------------*/
         {
-            return ("score: $" + score + ".00\nwhammy" + whammy);
+            return ("score: $" + score + ".00\nwhammy" + spins);
         }
 
         ~Player()
